@@ -1,0 +1,52 @@
+<!-- {% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    #<link rel="stylesheet" href="{{ url_for('learn', filename='style.css') }}">
+    <title>lets connect</title>
+</head>
+<body> 
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+    the browser is waiting for a response that Flask isn’t completing.
+    <h1>Welcome to {{ behaviour }}</h1>
+    <form action="/communication" method="POST">
+
+    <script>
+        // Send design updates without reloading page
+        async function updateDesign(event) {
+            event.preventDefault(); // stop normal form submit
+            const design = document.getElementById("design").value;
+            const response = await fetch("/admin", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ design })
+            });
+            const data = await response.json();
+            document.getElementById("current-design").textContent = data.design;
+        }
+
+       
+     
+    </script>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <form onsubmit="updateDesign(event)">
+        <input type="text" id="design" placeholder="Enter new UI design" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <h2>Current Design Structure:</h2>
+    <pre id="current-design">{{ design }}</pre>
+       <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a> 
+        </nav>
+    {{ui_desgn}} 
+</body>
+</html> -->
